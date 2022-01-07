@@ -1,0 +1,52 @@
+//Needed for writing to outfile
+	//int num_write = 0;
+	//struct rec records[number_process];
+	//struct rec smallest_rec;
+	//int smallest_index;
+
+//FILE *words = Fopen(&outfile, "wb");
+
+//Begin reading from the pipes, we know we're not done until we've written num_records records
+	//while (num_write != num_records){
+		//for (int j = 0; j < number_process; j ++){
+			//if (pipe_status[j] == 1){
+				//pipe_status[j] = 0;			
+				//int read_code = read(pipe_fd[j][0], &records[j], sizeof(struct rec));
+				//if(read_code == -1){
+					//perror("read");
+					//exit(1);			
+				//}else if(read_code == 0){
+					//pipe_status[j] = -1;			
+				//}	
+			//}			
+		//}
+		
+		//Finds the first available smallest record to start the search for the smallest element
+		//for (int j = 0; j < number_process; j++){
+			//if (pipe_status[j] != -1){
+				//smallest_rec = records[j];
+				//smallest_index = j;
+				//break;
+			//}			
+		//}
+		
+		//Find the smallest element out of the current available records
+		//for (int j = 0; j < number_process; j ++){
+			//if (pipe_status[j] != -1){
+				//if (records[j].freq < smallest_rec.freq){
+					//smallest_rec = records[j];
+					//smallest_index = j;				
+				//}
+			//}			
+		//}
+		//pipe_status[smallest_index] = 1;		
+
+		//if (fwrite(&smallest_rec, sizeof(struct rec), 1, words) != 1){
+			//fprintf(stderr, "error writing struct to file\n");
+			//exit(1);		
+		//}	
+		//Get here if we successfully write		
+		//num_write += 1;
+	//}
+	//Close the file
+	//Fclose(words);
